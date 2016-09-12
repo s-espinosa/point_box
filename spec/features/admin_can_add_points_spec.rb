@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "When an admin gives a user points" do
   it "the users point total increases" do
-    admin = User.create(username: "Admin", role: "1")
+    admin = User.create(username: "Admin", role: 1)
     user  = User.create(username: "User")
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
