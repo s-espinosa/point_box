@@ -1,0 +1,13 @@
+<h1>Edit <%= @user.username %></h1>
+
+<p>Points: <%= @user.points %></p>
+
+<%= form_for([:admin, @user]) do |f| %>
+  <%= f.hidden_field :points, value: @user.adjust_points(+1) %>
+  <%= f.submit "Add a point" %>
+<% end %>
+
+<%= form_for([:admin, @user]) do |f| %>
+  <%= f.hidden_field :points, value: @user.adjust_points(-1) %>
+  <%= f.submit "Remove a point" %>
+<% end %>
