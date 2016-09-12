@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(current_user[:id])
+    if current_user
+      @user = User.find(current_user[:id])
+    else
+      render_404
+    end
   end
 end
