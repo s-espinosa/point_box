@@ -2,3 +2,7 @@
 <h2><%= @user.username %></h2>
 
 <p>Points: <%= @user.points %></p>
+
+<% @user.rewards.each do |reward| %>
+  <p><%= reward.title %>, Value: <%= reward.value %></p>
+<% end %>
