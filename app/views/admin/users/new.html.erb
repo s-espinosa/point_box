@@ -1,0 +1,7 @@
+<h1>Create a New User</h1>
+
+<%= form_for([:admin, @user]) do |f|  %>
+  <%= f.text_field :username, value: "username" %>
+  <%= f.text_field :points, value: "points" %>
+  <%= f.submit %>
+<% end %>
