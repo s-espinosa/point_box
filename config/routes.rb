@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:show]
+  resources :rewards, only: [:index]
 
   namespace :admin do
     resources :users, only: [:edit, :update, :new, :create, :show]
