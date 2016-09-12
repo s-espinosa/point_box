@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:edit, :update, :new, :create, :show]
+    resources :rewards, only: [:new, :create, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
