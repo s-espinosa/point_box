@@ -1,0 +1,7 @@
+<h1>Edit <%= @reward.title %></h1>
+
+<%= form_for([:admin, @reward]) do |f| %>
+  <%= f.text_field :title, value: @reward.title %>
+  <%= f.text_field :value, value: @reward.value %>
+  <%= f.submit %>
+<% end %>

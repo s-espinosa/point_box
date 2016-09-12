@@ -14,6 +14,17 @@ class Admin::RewardsController < Admin::BaseController
     end
   end
 
+  def edit
+    @reward = Reward.find(params[:id])
+  end
+
+  def update
+    @reward = Reward.find(params[:id])
+    if @reward.update(reward_params)
+      redirect_to admin_reward_path(@reward)
+    end
+  end
+
   private
   def reward_params
     params.require(:reward).permit(:title, :value)
