@@ -1,4 +1,8 @@
 class Admin::RewardsController < Admin::BaseController
+  def index
+    @rewards = Reward.all
+  end
+
   def show
     @reward = Reward.find(params[:id])
   end
@@ -23,6 +27,11 @@ class Admin::RewardsController < Admin::BaseController
     if @reward.update(reward_params)
       redirect_to admin_reward_path(@reward)
     end
+  end
+
+  def destroy
+    Reward.find(params[:id]).delete
+    redirect_to admin_rewards_path
   end
 
   private

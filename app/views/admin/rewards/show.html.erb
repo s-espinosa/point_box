@@ -1,2 +1,3 @@
 <h1><%= @reward.title %></h1>
 <p>Value: <%= @reward.value %></p>
+<p><%= link_to "Delete", admin_reward_path(@reward), method: :delete %></p>
